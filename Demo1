@@ -11,11 +11,41 @@ public class Demo1 {
 
 }
 
-
-
-
-
-
-
 Demo1 acc = new Demo1();
 acc.CreateAccount('Sakshi','920111024');
+
+
+
+
+public class Demo2 {
+    public void UpdateOldAccount(String Name){
+        List<Account> OldAccounts = new List<Account>();
+        for(Account acc:[SELECT Name from Account WHERE Phone='920111024']){
+            acc.Name = Name;
+            oldAccounts.add(acc);
+            System.debug('Account has been updated'+acc.Name);
+        }
+        update OldAccounts;
+    }
+}
+Demo2 acc= new Demo2;
+acc.updateOldAccount('Rutu');
+
+
+public class Demo3 {
+    public void DeleteAccount(){
+        List<Account> oldAccounts = new List<Account>();
+        for(Account acc:[select Name,Phone from Account where Name='Rutu']){
+            delete acc;
+            System.debug('Account deleted:'+acc.Name);
+        }
+        update oldAccounts;
+    }
+}
+Demo3 acc = new Demo3();
+acc.DeleteAccount();
+
+
+          
+
+           
